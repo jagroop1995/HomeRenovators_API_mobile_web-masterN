@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HomeRenovtors.Models.SkilledLabourDetail>
+
+@{
+    ViewBag.Title = "viewSkilledWorker";
+}
+
+<h2>View Skilled Worker</h2>
+<br />
+<p>
+    The Below Given Persons are Skilled workers of are team that will work in your house.
+    These persons are persons  who has special skill, training, knowledge, and (usually acquired) ability in their work. A skilled worker may have attended a college, university or technical school. Alternatively, a skilled worker may have learned their skills on the job.
+</p>
+<br />
+
+<img src="~/images/skilled.jpg" />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skills)
+            </td>
+
+        </tr>
+    }
+
+</table>

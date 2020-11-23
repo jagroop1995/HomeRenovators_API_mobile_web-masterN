@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HomeRenovtors.Models.SkilledLabourDetail>
+
+@{
+    ViewBag.Title = "allLabour";
+}
+
+<h2>All Skilled Workers</h2>
+
+<p>
+    @Html.ActionLink("Register New Worker ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
+        <th>Edit | Delete </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skills)
+        </td>
+        <td>
+            <span class="btn btn-warning">@Html.ActionLink("Edit", "Edit", new { id = item.id }) </span>|
+            
+            <span class="btn btn-warning">  @Html.ActionLink("Delete", "Delete", new { id = item.id })</span>
+</td>
+    </tr>
+}
+
+</table>
+
+<a href="@Url.Action("AdminZone","Login")">Back to Main </a>
